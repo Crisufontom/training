@@ -1,0 +1,21 @@
+root.title("Toppings")
+root.iconbitmap("c:/users/user/documents/pythonicons/pizza.ico")
+
+y_otsikko = tk.Label(text="Choose your toppings:")
+y_otsikko.grid(column=0, row=0, padx=30, pady=20)
+
+FILLINGS = ["pepperoni", "cheese", "egg", "meat", "paprika", "basil"]
+
+box_value = tk.BooleanVar()
+box_value.set(False)
+
+i = 0
+
+for x in FILLINGS:
+    x = FILLINGS[i]
+    check = tk.Checkbutton(root, text=x, var=box_value, onvalue=x).grid(column=0, row=i + 1)
+    i += 1
+
+submit = tk.Button(text="Done!").grid(column=0, row=i+2, padx=30, pady=15)
+
+root.mainloop()
